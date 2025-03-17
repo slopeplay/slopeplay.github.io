@@ -100,7 +100,7 @@ export default async function Post({params}: { params: { slug: string } }) {
         </ContentBox>
       </Section>
 
-      <Section id="realted">
+      <Section id="related">
         {Array.isArray(relatedPostsList) && relatedPostsList.length > 0 && (
           <ul className="games-grid">
             {relatedPostsList.map((post) => (
