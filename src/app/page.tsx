@@ -17,11 +17,9 @@ export async function generateMetadata(): Promise<Metadata> {
   if (page && page.seo) {
     return {
       title: page.seo.title,
-      description: page.seo.description,
+      description: page.seo.description
     };
   }
-
-  return {};
 }
 
 export default async function Home() {
