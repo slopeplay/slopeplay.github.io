@@ -17,9 +17,6 @@ export async function generateMetadata({ params }: { params: { page: string } })
   if (page && page.seo) {
     metadata.title = page.seo.title;
     metadata.description = page.seo.description;
-    metadata.alternates = {
-      canonical: '/', // Points to the main page without pagination
-    };
   }
 
   // Add canonical URL only for pages > 1 to point back to the main page

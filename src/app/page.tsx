@@ -20,6 +20,9 @@ export async function generateMetadata(): Promise<Metadata> {
       description: page.seo.description
     };
   }
+
+  // Return empty metadata object if page or SEO data is not available
+  return {};
 }
 
 export default async function Home() {
