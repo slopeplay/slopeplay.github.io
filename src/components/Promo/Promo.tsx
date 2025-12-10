@@ -2,7 +2,7 @@
 
 // Styles
 import styles from './styles/Promo.module.scss';
-import {ReactNode} from "react";
+import { ReactNode } from "react";
 import ClassName from '@/utils/models/classname';
 
 /**
@@ -11,11 +11,12 @@ import ClassName from '@/utils/models/classname';
  */
 
 type TPromoProps = {
-  children: ReactNode,
-  className?: string
+  children?: ReactNode,
+  className?: string,
+  html?: string
 }
 
-const Promo = ({children, className}: TPromoProps) => {
+const Promo = ({ children, className, html }: TPromoProps) => {
   const promoClassName = new ClassName(styles.promo);
 
   if (className) {
@@ -23,8 +24,11 @@ const Promo = ({children, className}: TPromoProps) => {
   }
 
   return (
-    <div className={promoClassName.toString()}>
-      {children}
+    <div
+      className={promoClassName.toString()}
+      {...(html ? { dangerouslySetInnerHTML: { __html: html } } : {})}
+    >
+      {!html && children}
     </div>
   );
 };
